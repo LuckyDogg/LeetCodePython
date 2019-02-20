@@ -10,7 +10,7 @@ class Solution:
                return 1
 
        except:
-           return False;
+           return False
 
                
 
