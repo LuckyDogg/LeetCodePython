@@ -10,5 +10,8 @@ class Solution:
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
-        
+        head=self
+        r = head
+        while r.next is not None:
+
         
