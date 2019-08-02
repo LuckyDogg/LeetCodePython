@@ -6,27 +6,26 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-
-        head = l1 if l1.val < l2.val else l2
-        l = head
-
-        while l1.next is not None or l2.next is not None:
-            if l1.next.val < l2.next.val:
-                head.next = l1.next
-                l1.next = l1.next.next
+        headnode = tempnode = ListNode(0)
+        while l1 and l2 :
+            if l1.val < l2.val:
+                tempnode.next = l1
+                l1 = l1.next
             else:
-                head.next = l2.next.val
-                l2.next = l2.next.next
+                tempnode.next = l2
+                l2 = l2.next
+            tempnode = tempnode.next
 
-            head = head.next
+        tempnode.next = l1 if l1 else l2
 
-        if l1.next is None:
-            head.next=l2.next
-        else:
-            head.next=l1.next
-        print(l)
-        return lambda x: for i in range(1,100)
-        return l
+        return headnode.next
+
+
+
+
+
+
+
 
 
 
