@@ -7,34 +7,19 @@ class TreeNode:
 
 class Solution:
     def levelOrder(self, root: TreeNode) -> list[list[int]]:
-        stack = []
-        if root is None:
-            return []
-
-        l = []
-        def treelevel(root:TreeNode):
-            if root is not None:
-                l.append(root.val)
-                if root.left is not None:
-                    stack.append(root.left)
-                if root.right is not None:
-                    stack.append(root.right)
-                while len(stack) != 0:
-                    temp = stack.pop()
-                    l.append(temp.val)
-                    if temp.left is not None:
-                        stack.append(temp.left)
-                    if temp.right is not None:
-                        stack.append(temp.right)
-
-                return l
-        l = treelevel(root)
-        return l
-
-
-nodelist=[]
-def Tree(l):
-
-    def l():
-        while len(nodelist)!=0:
+        if root is not None:
+            queue = [root]
+            val_list = []
+            while len(queue) > 0:
+                child_list = []
+                node_list = []
+                for i in queue:
+                    child_list.append(i.val)
+                    if i.left is not None:
+                        node_list.append(i.left)
+                    if i.right is not None:
+                        node_list.append(i.right)
+                queue = node_list.copy()
+                val_list.append(child_list)
+            return val_list
 
